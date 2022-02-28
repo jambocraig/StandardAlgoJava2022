@@ -10,17 +10,18 @@ import static sorting.SortAlgorithms.*;
 public class SortTester {
     public static void main(String[] args) throws IOException {
         //testing declarations
-        long start, stop, duration;
+        long start, stop;
+        double duration;
         System.out.println("Sort tester");
         final int SIZE = 100_000;
         int[] arr = new int[SIZE];
         populate(arr);
         writeToFile(arr,"data.txt");
-        start = System.currentTimeMillis();
-        //quicksort(arr);
-        quicksort2(arr, 0, arr.length - 1);
-        stop = System.currentTimeMillis();
-        duration = stop - start;
+        start = System.nanoTime();
+        bubble(arr);
+        //quicksort2(arr, 0, arr.length - 1);
+        stop = System.nanoTime();
+        duration = (stop - start)/1_000_000_000.0;
         System.out.println(duration);
         //System.out.println(Arrays.toString(arr));
     }

@@ -109,16 +109,6 @@ public class SortAlgorithms {
     FOURTH EDITION
     Robert Sedgewick and Kevin Wayne */
 
-    /*
-    using 5, 1, 9, 4
-    lo = 0 hi = 3
-    call partition2 (arr, 0 , 3) which
-        i = 0
-        j = 4
-        pivot = 5
-
-
-     */
     public static void quicksort2(int[] a, int lo, int hi) {
         if (hi <= lo) return;
         int j = partition2(a, lo, hi);           // Partition (see page 291).
